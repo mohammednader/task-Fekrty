@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>
+      Sign Up
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <form [formGroup]="loginform">
+
+
+    <ion-row justify-content-center>
+      <ion-item lines="none">
+
+       
+        <ion-avatar id="icon-avatar">
+          <ion-icon name="person" color="primary" size="large" ></ion-icon>
+        </ion-avatar>
+
+      </ion-item>
+    </ion-row>
+
+
+    <ion-item lines="none">
+      <ion-label position="floating">Full Name</ion-label>
+      <ion-input type="text" formControlName="name" placeholder="Your Full Name" class="form-controll input-text"
+        required></ion-input>
+    </ion-item>
+
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.name">
+        <div class="error-message"
+          *ngIf="loginform.get('name').hasError(validation.type) && (loginform.get('name').dirty || loginform.get('name').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+
+    <ion-item lines="none">
+      <ion-label position="floating">BirthDay</ion-label>
+      <ion-input type="date" formControlName="birthDay" placeholder=" DD / MM / YYYY" class="input-text"></ion-input>
+    </ion-item>
+
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.BirthDay">
+        <div class="error-message"
+          *ngIf="loginform.get('BirthDay').hasError(validation.type) && (loginform.get('BirthDay').dirty || loginform.get('BirthDay').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" formControlName="email" placeholder=" your Email" class="input-text"></ion-input>
+    </ion-item>
+
+    <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message"
+            *ngIf="loginform.get('email').hasError(validation.type) && (loginform.get('email').dirty || loginform.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input type="number" formControlName="phone" placeholder="Your phone Number" class="input-text"></ion-input>
+    </ion-item>
+
+    <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.phone">
+          <div class="error-message"
+            *ngIf="loginform.get('phone').hasError(validation.type) && (loginform.get('phone').dirty || loginform.get('phone').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Location/Address</ion-label>
+      <ion-input type="text" formControlName="location" placeholder="Your Location" class="input-text"></ion-input>
+    </ion-item>
+
+    <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.location">
+          <div class="error-message"
+            *ngIf="loginform.get('location').hasError(validation.type) && (loginform.get('location').dirty || loginform.get('location').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+
+    <ion-button  (click)="presentAlert()" [disabled]="!loginform.valid" shape="round" size="default" expand="block" color="success">Next
+    </ion-button>
+
+
+
+
+  </form>
+</ion-content>

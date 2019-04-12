@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Model Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let user of users">
+
+    <ion-row justify-content-center>
+      <ion-item lines="none">
+        <ion-text padding>
+          <h3 text-capitalize>Give Feedback</h3>
+        </ion-text>
+      </ion-item>
+    </ion-row>
+    <ion-card-header>
+
+      <ion-row justify-content-center>
+
+        <ion-card-title>
+
+          <ion-avatar>
+            <img [src]="user.picture.medium">
+          </ion-avatar>
+
+        </ion-card-title>
+      </ion-row>
+
+      <ion-row justify-content-center>
+        <ion-item lines="none">
+          <ion-text padding>
+            <ion-icon name="star" color="warning"></ion-icon>
+            <ion-icon name="star" color="warning"></ion-icon>
+            <ion-icon name="star" color="warning"></ion-icon>
+            <ion-icon name="star" color="light"></ion-icon>
+            <ion-icon name="star" color="light"></ion-icon>
+          </ion-text>
+        </ion-item>
+      </ion-row>
+
+
+    </ion-card-header>
+
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+
+
+
+    <ion-item lines="none">
+      <ion-label position="floating">Feedback</ion-label>
+
+      <ion-textarea clearOnEdit="true" rows="6" cols="20" placeholder="Enter any notes here..." style="border:1px solid rgb(218, 218, 218);border-radius: 3px;"></ion-textarea>
+
+    </ion-item>
+
+    <ion-button   shape="round" size="small" expand="block" color="success">Send</ion-button>
+   
+  </ion-card>
+</ion-content>

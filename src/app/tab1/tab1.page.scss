@@ -1,0 +1,59 @@
+.welcome-card ion-img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+
+#topSection > ion-card > ion-card-header > ion-item > ion-list{
+  width: 100%;
+}
+
+#topSection > ion-card > ion-card-header > ion-item > ion-list > ion-item > ion-textarea{
+  height: 150px;
+}
+
+#userAvatarContainer{
+  vertical-align: middle !important;
+}
+
+#icon-avatar{
+
+  border:1px dashed rgb(184, 182, 182);;
+  
+  border-radius: 18px;
+  vertical-align: middle !important;
+
+ 
+
+}
+
+#icon-photo{
+  size: 100%;
+  vertical-align: middle !important;
+  padding-right:2px; 
+}
+
+ion-input[type=text],ion-input[type=date],ion-input[type=number]{
+
+  border:1px solid rgb(184, 182, 182);
+  
+  border-radius: 7px;
+  
+}
+
+.input-text{
+
+  padding:5px auto; margin:5px; text-indent:70%;
+  padding-left:20px;
+  text-align: center;
+ 
+}
+
+ion-button{
+  margin-top:5px;
+}
+.error-message{
+  font-size: 0.7em;
+  color: red;
+  text-align: center;
+}

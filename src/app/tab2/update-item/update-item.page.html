@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar color="success">
+      <ion-title>Update Item</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content *ngIf="item" padding>
+    <form [formGroup]="edit_item_form" (ngSubmit)="updateItem(edit_item_form.value)">
+
+        <ion-item>
+            <ion-label color="primary" position="floating">name</ion-label>
+            <ion-input type="text" formControlName="name" required></ion-input>
+          </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" position="floating">Title</ion-label>
+        <ion-input type="text" formControlName="title" required></ion-input>
+      </ion-item>
+     
+
+         <ion-item>
+              <ion-label color="primary" position="floating">image Url</ion-label>
+              <ion-input type="text" formControlName="imageurl" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label color="primary" position="floating">rate</ion-label>
+        <ion-input type="text" formControlName="rate" required></ion-input>
+      </ion-item>
+      <ion-button  color="success" expand="block" type="submit" [disabled]="!edit_item_form.valid">Update</ion-button>
+    </form>
+  </ion-content>

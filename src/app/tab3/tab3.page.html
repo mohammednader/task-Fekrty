@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>
+      Infinite scroll
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-virtual-scroll [items]="users" approxItemHeight="320px">
+  <ion-card *virtualItem="let user" [routerLink]="['./', user.sha256]">
+    <ion-item >
+      <ion-avatar item-start>
+        <img [src]="user.picture.medium">
+      </ion-avatar>
+      
+    
+      <ion-text padding>
+        <h3 text-capitalize>{{user.name?.first}} {{user.name?.last}}</h3>
+      </ion-text>
+      <ion-icon name="star" color="warning"></ion-icon>
+      <ion-text item-last color="medium" padding>
+        <h5 text-lowercase>{{user.dob.age}}</h5>
+      </ion-text>
+      
+      
+      <ion-label item-last color="success" padding>
+          <h5 text-lowercase>{{user.gender}}</h5>
+      </ion-label>
+      
+     </ion-item>
+    <ion-card-content>
+        <ion-icon name="mail-open" color="medium"></ion-icon>
+     
+      {{user.email}}
+    </ion-card-content>
+  </ion-card>
+</ion-virtual-scroll>
+ 
+</ion-content>
